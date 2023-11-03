@@ -12,6 +12,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import About from './components/About/About.jsx';
+import Contact from './components/Contact/Contact.jsx';
 
 
 
@@ -24,11 +26,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('t-shirt.json'),
       },
       
       {
-        path: "/",
-        element: <Home></Home>,
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/review",
